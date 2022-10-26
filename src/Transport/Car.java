@@ -206,8 +206,8 @@ public class Car {
         return seatsCount;
     }
 
-    public boolean isCorrectRegNumber(){
-        if (regNumber.length()!=9) {
+    public boolean isCorrectRegNumber() {
+        if (regNumber.length() != 9) {
             return false;
         }
         char[] chars = regNumber.toCharArray();

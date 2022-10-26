@@ -9,7 +9,7 @@ public class Main {
     public static void main(String[] args) {
         int currentYear = 2022;
 
-        Human maksim = new Human("Максим", "Минск", currentYear  - 35, "бренд-менеджер");
+        Human maksim = new Human("Максим", "Минск", currentYear - 35, "бренд-менеджер");
         Human anya = new Human("Аня", "Москва", currentYear - 29, "методист образовательных программ");
         Human katya = new Human("Катя", "Калининград", currentYear - 28, "продакт-менеджер");
         Human artyom = new Human("Артём", "Москва", currentYear - 27, "директор по развитию бизнеса");
@@ -23,10 +23,10 @@ public class Main {
 
         System.out.println();
 
-        Flower rose = new Flower("Роза обыкновенная",null, "Голландия", 35.59);
-        Flower chrysanthemum = new Flower("Хризантема",null, null, 15, 5);
-        Flower peony = new Flower("Пион",null, "Англия", 69.9, 1);
-        Flower gypsophila = new Flower("Гипсофила",null, "Турция", 19.5, 10);
+        Flower rose = new Flower("Роза обыкновенная", null, "Голландия", 35.59);
+        Flower chrysanthemum = new Flower("Хризантема", null, null, 15, 5);
+        Flower peony = new Flower("Пион", null, "Англия", 69.9, 1);
+        Flower gypsophila = new Flower("Гипсофила", null, "Турция", 19.5, 10);
 
         printInfo(rose);
         printInfo(chrysanthemum);
@@ -36,8 +36,8 @@ public class Main {
         System.out.println();
 
         printCostOfBouquet(
-                rose,rose,rose,
-                chrysanthemum,chrysanthemum,chrysanthemum,chrysanthemum,chrysanthemum,
+                rose, rose, rose,
+                chrysanthemum, chrysanthemum, chrysanthemum, chrysanthemum, chrysanthemum,
                 gypsophila);
 
         System.out.println();
@@ -52,7 +52,7 @@ public class Main {
         granta.setRegNumber("к501ле102");
         System.out.println(granta.isCorrectRegNumber());
 
-        
+
         Car audi = new Car(
                 "Audi",
                 "A8 50 L TDI quattro",
@@ -61,7 +61,7 @@ public class Main {
                 2020,
                 "Германия");
         audi.setTransmission("автомат");
-        audi.setKey(new Car.Key(true,true));
+        audi.setKey(new Car.Key(true, true));
 
         Car bmw = new Car(
                 "BMW",
@@ -71,7 +71,7 @@ public class Main {
                 2021,
                 "Германия");
         bmw.setSummerTyres(false);
-        bmw.setInsurance(new Car.Insurance(LocalDate.now(), 30_000D,"5412369"));
+        bmw.setInsurance(new Car.Insurance(LocalDate.now(), 30_000D, "5412369"));
         bmw.getInsurance().checkExpireDate();
         bmw.getInsurance().checkNumber();
 
@@ -110,11 +110,12 @@ public class Main {
                 ", стоимость за штуку: " + flower.getCost() +
                 ", срок стояния цветка: " + flower.lifeSpan);
     }
+
     private static void printCostOfBouquet(Flower... flowers) {
         double totalCost = 0;
         int minimumLifeSpan = Integer.MAX_VALUE;
         for (Flower flower : flowers) {
-            if (flower.lifeSpan<minimumLifeSpan) {
+            if (flower.lifeSpan < minimumLifeSpan) {
                 minimumLifeSpan = flower.lifeSpan;
             }
             totalCost += flower.getCost();
@@ -124,7 +125,7 @@ public class Main {
         System.out.println("Стоимость букета: " + totalCost);
         System.out.println("Срок стояния букета: " + minimumLifeSpan);
 
-        }
+    }
 
     private static void printInfo(Car car) {
         System.out.println(
@@ -146,5 +147,4 @@ public class Main {
                         ", срок действия страховки: " + car.getInsurance().getExpireDate()
         );
     }
-    }
-
+}

@@ -19,7 +19,7 @@ public class Flower {
         } else {
             this.country = country;
         }
-        if (cost <=0) {
+        if (cost <= 0) {
             this.cost = 1;
         } else {
             this.cost = cost;
@@ -64,7 +64,7 @@ public class Flower {
     }
 
     public void setCost(double cost) {
-        if (cost <=0) {
+        if (cost <= 0) {
             this.cost = 1;
         } else {
             this.cost = cost;
